@@ -1,0 +1,331 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-size: 16px;
+  font-family: "Assistant", sans-serif;
+  background-color: #f0f3fa;
+}
+
+#app {
+  height: 100%;
+}
+.align-data-field {
+  word-break: break-all;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+.bg-white-op-20 {
+  background-color: rgba(#fff, 0.2);
+}
+
+// .........serial number
+.serial-number {
+  @apply text-green text-lgh font-bold;
+}
+
+//.......empty radio check box...
+.empty-radio-btn {
+  @apply absolute pin-l pin-t h-full flex justify-center items-center;
+  &::after {
+    content: "";
+    content: "";
+    height: 20px;
+    width: 20px;
+    transform: translateX(-50%) scale(1);
+    @apply border rounded-full bg-white border-borderColor;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: center;
+    transition: all 0.3s;
+  }
+  &.active {
+    &::after {
+      @apply border-green;
+      background-image: url("/static/images/circular-check.png");
+    }
+  }
+  .check-box {
+    transform: translateX(-50%);
+  }
+}
+
+//  .......hide scrollbar ...
+.hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+// Scroll Bar styling
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 2px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 10px !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cfd0ce;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #adaeac;
+}
+
+.pill {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #eaf8ed;
+  @apply text-main leading-loose py-1 pl-4 pr-10 mb-4 rounded-full mr-4;
+
+  img {
+    position: relative;
+    right: -22px;
+    height: 8px;
+    top: -2px;
+  }
+}
+.border-box {
+  box-sizing: border-box;
+}
+.content-box {
+  box-sizing: content-box;
+}
+
+// ..........date picker.....
+.datepicker {
+  .form-control {
+    input {
+      border: 0 !important;
+      border-radius: 0 !important;
+      @apply border-t border-b;
+    }
+  }
+}
+
+// ......................Common-table-for-User-Mgmt..................
+.table-holder {
+  height: 100%;
+  background-color: white;
+  margin: 25px;
+  // main-header-container
+  .header-container {
+    padding: 0 30px 0 25px;
+  }
+  a {
+    color: #3b5666;
+    &:active {
+      color: #3b5666;
+    }
+  }
+  //table-header
+  .users-table-header {
+    background-color: white;
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding: 18px 0px;
+    margin: 0px 10px;
+    letter-spacing: 0.4px;
+    color: rgba(#000, 0.5);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+  .table-row-holder {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  // colum-element
+  .col-element {
+    flex: 1;
+    padding: 0 15px;
+    .img-holder {
+      margin-right: 5px;
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      background-color: grey;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+    .img-data-container {
+      margin-right: 5px;
+      display: inline-block;
+      object-fit: cover;
+      vertical-align: middle;
+      @apply rounded-full border-none  w-full h-full outline-none;
+    }
+  }
+  .edit-icon {
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .block-icon {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  // common-flex-classes
+  .flex-sm {
+    flex: 0.75;
+  }
+  .flex-half {
+    flex: 0.5;
+  }
+  .flex-lg {
+    flex: 1.2;
+  }
+  .flex-xs {
+    flex: 0.2;
+  }
+
+  // main-table-body-container
+  .user-table-content-container {
+    height: calc(100% - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 25px;
+    background-color: transparent;
+  }
+  // table-body-row
+  .user-table-content {
+    padding: 18px 0px;
+    margin: 0px 10px;
+    border-bottom: solid 1px #97979a33;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #3b5666;
+    &:last-child {
+      // margin-bottom: 150px;
+      margin-bottom: 25px;
+      border-bottom: 0px;
+    }
+  }
+}
+.error-no-border-align {
+  top: -10px !important;
+}
+span.error {
+  top: -30px;
+  left: 0;
+
+  font-weight: 500;
+  text-align: left;
+  @apply absolute text-xs text-alert items-center h-8;
+}
+.chevron-left-link {
+  @apply cursor-pointer no-underline flex items-center justify-center text-sm mr-3;
+  &.align {
+    left: -16px;
+    @apply pt-1;
+  }
+}
+
+.nav-left-at {
+  @apply ml-auto flex w-auto h-10 justify-end items-end;
+}
+
+.btn-align-left {
+  @apply ml-3;
+}
+
+.dropdown-align {
+  @apply w-64 h-full;
+}
+// ...........card triangle tag...
+.tag {
+  height: 30px;
+  width: 30px;
+  -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+//...............used in booking slot cards
+.slot-container {
+  z-index: 11;
+}
+
+.modal-padding {
+  padding: 50px 0;
+}
+.modal-hor-padding {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+//......chevron align
+.chevron-transform {
+  transition: all 0.3s ease-in-out;
+  transform: rotate(270deg);
+  &.active {
+    transform: rotate(90deg);
+  }
+}
+
+//......  dropdown menu style css
+.dropdown-menu-style {
+  border-radius: 4px;
+  box-shadow: 0 32px 44px 0 rgba(30, 33, 46, 0.14);
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  top: calc(100% + 8px);
+}
+
+.dropdown-main-container {
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  .paginated-dropdown-component,
+  .dropdown-menu-component {
+    box-shadow: 0 2px 4px 0 rgba(143, 148, 157, 0.08);
+    top: calc(100% + 8px);
+    max-height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .paginated-scroll {
+    overflow-y: hidden !important;
+  }
+}
+
+.address-list-loader-container {
+  height: 222px;
+}
+
+// ....time picker ....
+.time-picker,
+.time-picker .dropdown .select-list {
+  width: 200px !important;
+}
+.time-picker .dropdown {
+  width: 100% !important;
+}
+.time-picker input.display-time {
+  width: 100% !important;
+  border: 1px solid rgba(#ccc, 0.3) !important;
+  border-radius: 4px;
+  padding: 20px !important;
+  cursor: pointer;
+}
+.img-rotate {
+  transform: rotate(180deg);
+}

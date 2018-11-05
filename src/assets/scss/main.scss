@@ -1,0 +1,10 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+@import "./_btn.scss";
+@import "./_mixin";
+@import "./_forms";
+@import "./_modal.scss";
+@import "./_container.scss";
+@import "./custom.scss";
+@import "./animation.scss";

@@ -1,0 +1,409 @@
+.input-block {
+  margin-bottom: 40px;
+  @apply relative flex justify-start;
+  &.error {
+    border: 1px solid #ff6e6e;
+  }
+  &.btn-align {
+    margin-bottom: 0 !important;
+  }
+  &.no-border {
+    border: 0;
+  }
+  img.error {
+    display: block;
+    position: absolute;
+    right: 15px;
+    width: 20px;
+    height: auto;
+    top: calc(50% - 10px);
+  }
+  &.barcode {
+    margin: 0;
+    .img-container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      img {
+        height: 30px;
+      }
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+//input:focus ~ .floating-label,
+//input:visited ~ .floating-label ,
+//input:not(:focus):valid ~ .floating-label {
+.floating-label.active {
+  top: -25px;
+  left: 0;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 1;
+  height: auto;
+  @apply text-primary;
+}
+.floating-label-top-align {
+  top: -10px !important;
+}
+
+.floating-label-dropdown.alert-label {
+  color: #ff6e6e !important;
+}
+.floating-label-dropdown.active {
+  top: -25px;
+  left: 0;
+  font-size: 14px;
+  display: flex;
+  line-height: 17px;
+  opacity: 1;
+  height: auto;
+  @apply text-primary;
+}
+
+.default-input.error {
+  @apply border-alert;
+}
+.floating-label.labelDisplay {
+  display: none;
+}
+
+.hr-line {
+  width: 100%;
+  height: 1px;
+  background-color: #eff3f7;
+}
+
+input {
+  outline: none;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &.default-input {
+    font-weight: 400;
+    @apply bg-white text-primary text-base py-3 h-10  px-5 border border-grey-light rounded relative;
+
+    &:focus {
+      @apply border-main;
+    }
+    &.disabled {
+      @apply bg-borderColor;
+    }
+
+    &.error {
+      border: 1px solid #ff6e6e !important;
+      img.error {
+        display: block;
+      }
+    }
+    &.no-border {
+      border: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+  &.add-image {
+    padding-right: 50px;
+    position: relative;
+    border: 0;
+    margin: 0;
+    .img-container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      img {
+        height: 30px;
+      }
+    }
+  }
+  &::placeholder {
+    @apply text-placeholderColor;
+  }
+}
+
+.sm-form-height {
+  height: calc(100vh - 130px);
+}
+
+.floating-label,
+.floating-label-dropdown {
+  position: absolute;
+  pointer-events: none;
+  left: 20px; // top: 20px;
+  font-size: 16px;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
+  transition: all 0.2s ease;
+  @apply text-placeholderColor flex justify-center items-center font-normal;
+}
+.floating-label-dropdown {
+  display: none;
+}
+
+//----text-area----
+textarea {
+  resize: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+  &:focus {
+    @apply border-main;
+  }
+}
+
+.search-bar {
+  &::placeholder {
+    @apply text-primary  text-base opacity-70;
+  }
+  @apply ml-8 w-full bg-fieldBackground text-base py-2 text-primary;
+}
+// Drop down
+
+select {
+  height: 40px;
+  @apply bg-white border border-grey-light rounded text-primary px-3;
+}
+
+// toggle switch
+.switch {
+  width: 36px;
+  height: 20px;
+  background: white;
+  @apply flex justify-center items-center rounded-full cursor-pointer border relative;
+  padding: 1px;
+  transition: all 0.3s;
+  &::after {
+    content: "";
+    height: 18px;
+    width: 18px;
+    @apply rounded-full border absolute pin-t pin-l bg-white;
+    transition: all 0.3s;
+  }
+  &.active {
+    @apply bg-green border-green;
+    &::after {
+      left: 0;
+      transform: translateX(100%);
+      // right: 0;
+    }
+  }
+}
+
+// Select Yes/No option div
+.boolean-selector {
+  height: 40px;
+  width: 100%;
+  @apply border border-grey-light rounded;
+}
+
+// Radio Buttons
+.radio-boolean {
+  .boolean-option {
+    display: inline-block;
+    position: relative;
+    padding-left: 22px;
+    // margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default radio button */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    height: 16px;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid #a3a3a3;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  input:checked ~ .checkmark {
+    /* background-color: #2196F3; */
+    border: 1px solid #37bc51;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  input:checked ~ .checkmark:after {
+    display: inline-block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .checkmark:after {
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #37bc51;
+  }
+  span {
+    display: inline-block;
+  }
+}
+.floating-left-align {
+  left: 0 !important;
+}
+
+// Old radio buttons. Kept just for compatibility
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+input[type="radio"] + .radio-label:before {
+  content: "";
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.1em;
+  margin-right: 0.5em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+}
+input[type="radio"]:checked + .radio-label:before {
+  background-color: #37bc51;
+  border: 1px solid #37bc51;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+input[type="radio"]:focus + .radio-label:before {
+  outline: none;
+  border-color: #37bc51;
+}
+input[type="radio"]:disabled + .radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+input[type="radio"] + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+.error-message {
+  background-color: #ff3d3d;
+  color: white;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.error-message:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #ff3d3d transparent transparent;
+  top: 15px;
+  left: -10px;
+}
+
+// Popper (tooltip styling)
+.popper {
+  background-color: transparent !important;
+  border: 0px solid #ff3d3d !important;
+  box-shadow: 0 9px 27px -5px rgba(0, 0, 0, 0) !important;
+  font-size: 13px !important;
+  color: #ff3d3d !important;
+  z-index: 1 !important;
+  margin-top: 2px !important;
+}
+.popper .popper__arrow {
+  clip-path: polygon(50% 5%, 0% 100%, 100% 100%) !important;
+  width: 5px !important;
+  height: 5px !important;
+  background-color: white !important;
+}
+
+// used for popper btn
+#popperBtn,
+#popperListBtn {
+  .popper[x-placement^="bottom"] .popper__arrow,
+  .popper[x-placement^="top"] .popper__arrow,
+  .popper[x-placement^="right"] .popper__arrow,
+  .popper[x-placement^="left"] .popper__arrow {
+    border-width: 0 5px 5px 5px !important;
+    border-color: black black transparent black !important;
+  }
+  .popper[x-placement^="bottom"] .popper__arrow {
+    transform: rotate(0deg);
+  }
+  .popper[x-placement^="top"] .popper__arrow {
+    transform: rotate(180deg);
+  }
+  .popper[x-placement^="right"] .popper__arrow {
+    transform: rotate(270deg);
+    left: -8px !important;
+  }
+  .popper[x-placement^="left"] .popper__arrow {
+    transform: rotate(90deg);
+    right: -8px !important;
+  }
+}
+
+#popperListBtn {
+  .popper .popper__arrow {
+    left: 28% !important;
+  }
+}
+
+.popper[x-placement^="bottom"] .popper__arrow {
+  border-color: transparent transparent #ff3d3d transparent !important;
+}
+.popper[x-placement^="top"] .popper__arrow {
+  border-color: #ff3d3d transparent transparent transparent !important;
+}
+.popper[x-placement^="right"] .popper__arrow {
+  border-color: transparent #ff3d3d transparent transparent !important;
+}
+.popper[x-placement^="left"] .popper__arrow {
+  border-color: transparent transparent transparent #ff3d3d !important;
+}
+
+.input-block {
+  span {
+    width: 100%;
+  }
+}
+
+// Popper styles end

@@ -8,16 +8,48 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "@vue/eslint-config-standard": "^3.0.1",
+    "babel-preset-env": "^1.7.0",
+    "chart.js": "^2.7.3",
+    "d3": "^5.7.0",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.2",
+    "node-sass": "^4.9.4",
+    "postcss-import": "^12.0.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.5.17",
+    "vue-chartjs": "^3.4.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@vue/eslint-config-standard": "^3.0.1",
+    "axios": "^0.18.0",
+    "babel-preset-env": "^1.7.0",
+    "moment": "^2.22.2",
+    "postcss-import": "^12.0.0",
+    "vue": "^2.5.17",
+    "vue-popperjs": "^1.5.0",
+    "vue-router": "^3.0.1",
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
-    "vue-template-compiler": "^2.5.17"
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "prettier-eslint": "^8.8.2",
+    "sass-loader": "^7.1.0",
+    "tailwindcss": "^0.6.5",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.16.5"
   },
   "eslintConfig": {
     "root": true,
@@ -31,11 +63,6 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
     }
   },
   "browserslist": [

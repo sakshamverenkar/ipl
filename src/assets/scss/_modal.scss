@@ -1,0 +1,77 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999;
+  transition: all 0.3s;
+  &.show-backdrop {
+    visibility: visible;
+    opacity: 0.9;
+  }
+}
+
+.pop-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1100;
+  transition: all 0.3s;
+  &.show-backdrop {
+    visibility: visible;
+    opacity: 0.9;
+  }
+}
+
+.calendar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.3s;
+  &.show {
+    visibility: visible;
+    opacity: 0.7;
+  }
+}
+
+.modal-open {
+  overflow: hidden;
+  position: relative;
+}
+
+.top-area {
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  width:100%;
+  padding: 18px 34px 12px;
+  border-bottom: solid 1px #eff3f7;
+}
+
+.cross-btn {
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  @apply flex text-black text-xs absolute border-dark-grey justify-center rounded-full border-solid border bg-white items-center font-bold text-center;
+  &:hover {
+    @apply bg-dark-grey border-none text-white;
+  }
+}
+.cancel-btn {
+  right: 20px;
+  top: 20px;
+}

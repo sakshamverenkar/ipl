@@ -1,0 +1,182 @@
+.theme-radio-box {
+  position: relative;
+  @apply flex justify-start items-center cursor-pointer;
+  transition: all 0.3s;
+  .radio-btn {
+    @apply border-grey border cursor-pointer;
+    height: 15px;
+    width: 15px;
+    border-radius: 100px;
+    margin-right: 10px;
+  }
+  .test-radio-btn {
+    width: 13px;
+    height: 13px;
+  }
+
+  &.active {
+    .radio-btn {
+      @apply bg-green border-grey-lighter border-4;
+      box-shadow: 0 0 0 1px #37bc51;
+    }
+  }
+}
+
+// ........radio-box
+.radio-box {
+  @apply border-grey border cursor-pointer;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  &.active {
+    @apply bg-green border-grey-lighter border-2;
+  }
+}
+
+// .............theme color flat button
+button {
+  outline: 0 !important;
+}
+.theme-btn {
+  outline: 0 !important;
+  @apply bg-green rounded text-white text-base px-8 py-3 font-semibold;
+  &.px-12 {
+    @apply px-12;
+  }
+  &.px-10 {
+    @apply px-10;
+  }
+  &.py-1 {
+    @apply py-1;
+  }
+
+  &.py-2 {
+    @apply py-2;
+  }
+
+  &.header-align {
+    @apply h-10 px-5;
+  }
+  &.rounded-full {
+    @apply rounded-full;
+  }
+
+  &.text-xs {
+    @apply text-xs;
+  }
+
+  &.bg-white {
+    @apply bg-white border border-green text-green border-solid;
+    transition: all 0.3s;
+    &:hover {
+      @apply bg-green text-white;
+    }
+  }
+
+  &.bg-grey {
+    @apply bg-subHeading;
+  }
+}
+
+// .....theme rounded small btn ...with no hover
+.theme-sm-btn-rounded {
+  @apply bg-green rounded-full text-white text-base px-8 py-2 font-semibold outline-none;
+  &.px-4 {
+    @apply px-4;
+  }
+}
+
+.theme-green-border-btn {
+  @apply text-main rounded  border border-solid border-main px-6 py-3 text-lg font-semibold outline-none;
+  &.no-border {
+    @apply border-none;
+  }
+  &.px-3 {
+    @apply px-3;
+  }
+}
+.theme-grey-sm-btn {
+  background-color: rgba(0, 0, 0, 0.08);
+  @apply text-primary rounded text-base
+    px-6 py-2 font-bold text-sm outline-none;
+  &.px-4 {
+    @apply px-4;
+  }
+  &.active {
+    @apply text-main;
+  }
+}
+
+.grey-sm-btn-rounded {
+  @apply bg-subHeading rounded-full text-white text-base px-6 py-2 font-semibold outline-none;
+
+  &.bg-borderColor {
+    @apply bg-borderColor;
+  }
+
+  &.text-primary {
+    @apply text-primary;
+  }
+}
+
+.white-sm-btn-rounded {
+  @apply bg-white border border-borderColor rounded-full text-primary px-6 py-1 font-semibold outline-none;
+}
+
+.theme-btn-rounded-grey {
+  @apply bg-white rounded-full text-darkest-grey border border-solid border-darkest-grey;
+}
+
+//..............rounded btn white
+.white-btn-rounded {
+  padding: 8px 15px;
+  @apply border border-solid border-borderColor font-semibold rounded-full text-black text-xs bg-white outline-none;
+  transition: all 0.3s;
+  &.active {
+    @apply border-main bg-main text-white;
+  }
+  &.rounded {
+    @apply rounded outline-none;
+  }
+}
+
+//..............alert button
+.alert-btn {
+  @apply text-white bg-alert font-bold  py-3 px-6 max-w-full outline-none;
+}
+
+.alert-text-btn {
+  @apply border-0 bg-white text-alert font-bold px-8 outline-none;
+}
+
+//.............information circular icon
+.info-pill {
+  height: 13px;
+  width: 13px;
+  font-size: 10px;
+  @apply flex justify-center items-center;
+}
+
+// Green Submit Button
+.submit-btn {
+  min-width: 120px;
+  height: 50px;
+  font-size: 18px;
+}
+.theme-black-btn {
+  letter-spacing: 0.6px;
+  font-size:12px;
+  @apply rounded bg-primary py-1 px-4 text-white;
+}
+
+.grey-border-btn {
+  letter-spacing: 0.8px;
+  @apply rounded bg-white text-sm text-primary font-semibold flex justify-center items-center border border-solid border-borderColor
+ 
+}
+
+.green-border-btn {
+  letter-spacing: 0.8px;
+  height:38px;
+  @apply rounded bg-white text-sm text-main font-semibold flex justify-center items-center border border-solid border-main
+}
