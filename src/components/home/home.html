@@ -1,93 +1,97 @@
-<div class="component-home py-4 ">
-   <div class=" container-fluid flex flex-col items-center justify-center bg-white shadow-md  pb-5 ">
-       <div class="heading font-semibold text-primary text-msh mb-5 ">
-          Winning Percentage
-       </div>
-       <canvas id="myChart"></canvas>
-   </div>
-    <div class="container-fluid w-5/6 mt-5 mx-auto ">
+<div class="component-home py-4 sm:p-2 ">
+    <div class=" container-fluid flex flex-col items-center justify-center bg-white shadow-md  pb-5 ">
         <div class="heading font-semibold text-primary text-msh mb-5 ">
+            Winning Percentage
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="container-fluid w-5/6 mt-5 mx-auto sm:w-full ">
+        <div class="heading font-semibold text-primary text-msh mb-5 sm:text-lg ">
             Past Season Player Stats
         </div>
-        <div class="match-table bg-white  shadow-md ">
+        <div class="series-table bg-white  shadow-md ">
             <div class=" flex">
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs">
                     Season Year
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs">
                     Orange Cap Holder
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs">
                     Purple Cap Holder
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs  ">
                     Man of the Series
                 </div>
             </div>
             <div class="flex" v-for="data of seasonComputed">
-                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid sm:text-xs">
                     {{formatYear(data.Season_Year)}}
                 </div>
                 <div class=" px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid flex
-                        items-center text-orange">
+                        items-center text-orange sm:text-xs">
                     {{getPlayerName(data.Orange_Cap_Id)}}
                 </div>
                 <div class=" px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid flex
-                        items-center text-purple ">
+                        items-center text-purple sm:text-xs">
                     {{getPlayerName(data.Purple_Cap_Id)}}
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid sm:text-xs">
                     {{getPlayerName(data.Man_of_the_Series_Id)}}
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid w-5/6 mt-5 mx-auto ">
-        <div class="heading font-semibold text-primary text-msh mb-5 ">
+    <div class="container-fluid w-5/6 mt-5 mx-auto sm:w-full ">
+        <div class="heading font-semibold text-primary text-msh mb-5 sm:text-lg  ">
             Season's Matches
         </div>
         <div class="match-table bg-white  shadow-md ">
             <div class=" flex">
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs ">
                     Date
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs ">
                     Team 1
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs ">
                     Team 2
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-semibold text-lg border-r border border-solid sm:text-xs ">
                     City
                 </div>
             </div>
             <div class="flex" v-for="match of matches2016">
-                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid sm:text-xs ">
                     {{formatDate(match.Match_Date)}}
                 </div>
-                <div
-                        class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid flex
-                        items-center">
+                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid flex
+                        items-center sm:text-xs sm:flex-col sm:items-start ">
                     {{getTeamName(match.Team_Name_Id)}}
-                    <i class="fas fa-trophy text-golden ml-2"
-                       v-if="match.Match_Winner_Id === match.Team_Name_Id"></i>
+                    <span class="flex sm:mt-2   sm:items-center">
+                       <i class="fas fa-trophy text-golden ml-2 sm:text-sm sm:ml-0 sm:mr-2"
+                          v-if="match.Match_Winner_Id === match.Team_Name_Id"></i>
                     <i class="fas fa-rupee-sign text-white bg-silver  rounded-full flex
-                    items-center justify-center w-6 h-6 ml-2 text-sm"
+                    items-center justify-center w-6 h-6 ml-2 sm:ml-0 text-sm sm:text-xs h-5 w-5"
                        v-if="match.Toss_Winner_Id === match.Team_Name_Id ">
-
                     </i>
+                   </span>
                 </div>
                 <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid flex
-                        items-center ">
+                        items-center sm:text-xs sm:flex-col sm:items-start  ">
                     {{getTeamName(match.Opponent_Team_Id)}}
-                    <i class="fas fa-trophy text-golden ml-2"
-                       v-if="match.Match_Winner_Id === match.Opponent_Team_Id"></i>
-                    <i class="fas fa-rupee-sign text-white bg-silver  rounded-full flex
-                    items-center justify-center w-6 h-6 ml-2 text-sm"
-                       v-if="match.Toss_Winner_Id === match.Opponent_Team_Id ">
-                    </i>
+                    <span class="flex  sm:mt-2 sm:items-center ">
+                        <i class="fas fa-trophy text-golden ml-2  sm:text-sm sm:ml-0 sm:mr-2"
+                            v-if="match.Match_Winner_Id === match.Opponent_Team_Id"></i>
+                        <i class="fas fa-rupee-sign text-white bg-silver  rounded-full flex
+                         items-center justify-center w-6 h-6 ml-2 sm:ml-0 text-sm sm:text-xs h-5 w-5 "
+                           v-if="match.Toss_Winner_Id === match.Opponent_Team_Id ">
+
+                        </i>
+                    </span>
+
                 </div>
-                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid">
+                <div class="text-primary px-2 py-4 w-1/4 font-medium text-lg border-r border border-solid sm:text-xs ">
                     {{match.City_Name}}
                 </div>
             </div>

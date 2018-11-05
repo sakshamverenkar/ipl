@@ -19,3 +19,18 @@ npm run build
 ```
 npm run lint
 ```
+
+
+### Technologies Used:
+```
+Vue3
+TailWind
+Moment
+```
+
+
+### Bonus Points:
+```
+you create the web-app in vue.js - Done.
+you make it mobile responsive. - Done.
+```
