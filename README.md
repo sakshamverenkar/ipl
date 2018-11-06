@@ -26,11 +26,12 @@ npm run lint
 Vue3
 TailWind
 Moment
+Charts.js
 ```
 
 
 ### Bonus Points:
 ```
-you create the web-app in vue.js - Done.
-you make it mobile responsive. - Done.
+Create the web-app in vue.js - Done.
+Make it mobile responsive. - Done.
 ```
